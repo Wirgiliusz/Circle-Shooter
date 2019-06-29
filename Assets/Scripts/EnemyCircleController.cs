@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EnemyCircleController : MonoBehaviour
 {
-    public GameObject comboText;
-    public GameObject scoreText;
     public GameObject destroyParticleEffect;
+    public GameObject scoreText;
+    public GameObject comboText;
     private Transform targetTransform;  // transform of the enemy target
     private Vector2 direction;          // enemy direction vector
     private Vector2 up;
@@ -76,7 +76,7 @@ public class EnemyCircleController : MonoBehaviour
 
             GameObject comboTextMesh = Instantiate(comboText, transform.position, Quaternion.identity);
             comboTextMesh.GetComponent<TextMesh>().color = GetComponent<SpriteRenderer>().color;
-            
+
             Destroy(gameObject);
         }
 

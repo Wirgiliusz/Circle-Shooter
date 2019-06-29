@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyWaveController : MonoBehaviour
-{
-    public GameObject comboText;
-    public GameObject scoreText;
+{    
     public GameObject destroyParticleEffect;
+    public GameObject scoreText;
+    public GameObject comboText;
     private Transform targetTransform;  // transform of the enemy target
     private Vector2 direction;          // enemy direction vector
 
@@ -68,7 +68,7 @@ public class EnemyWaveController : MonoBehaviour
 
             GameObject comboTextMesh = Instantiate(comboText, transform.position, Quaternion.identity);
             comboTextMesh.GetComponent<TextMesh>().color = GetComponent<SpriteRenderer>().color;
-            
+
             Destroy(gameObject);
         }
 
