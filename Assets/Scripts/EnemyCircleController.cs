@@ -19,6 +19,7 @@ public class EnemyCircleController : MonoBehaviour
     private int revolvingDirection = 0;
     public int damage;        // enemy damage
     public int score;
+    private float gameSpeed;
 
     public float raycastDistance;   // distance of the raycast from the enemy
     public float raycastRadius;      // radius of the raycast from the enemy
@@ -29,7 +30,9 @@ public class EnemyCircleController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = startSpeed + Random.Range(-3,3);
+        gameSpeed = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>().gameSpeed;
+
+        speed = (startSpeed + Random.Range(-3,3)) * gameSpeed;
         revolvingSpeed = startRevolvingSpeed + Random.Range(-0.03f,0.03f);
         while(revolvingDirection == 0) {
             revolvingDirection = Random.Range(-1,2);

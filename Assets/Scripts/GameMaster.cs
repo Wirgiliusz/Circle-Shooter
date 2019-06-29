@@ -24,6 +24,7 @@ public class GameMaster : MonoBehaviour
     public int totalScore = 0;
     private float scoreMultiplier = 1.0f;
     public int combo = 0;
+    public float gameSpeed = 1.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -71,5 +72,21 @@ public class GameMaster : MonoBehaviour
         }
 
         totalScore = totalScore + Mathf.RoundToInt(score*scoreMultiplier);
+
+        if(totalScore >= 1000 && totalScore < 3000) {
+            gameSpeed = 1.2f;
+        }
+        else if(totalScore >= 3000 && totalScore < 5000) {
+            gameSpeed = 1.5f;
+        }
+        else if(totalScore >= 5000 && totalScore < 10000) {
+            gameSpeed = 2.0f;
+        }
+        else if(totalScore >= 10000 && totalScore < 15000) {
+            gameSpeed = 2.5f;
+        }
+        else if(totalScore >= 15000) {
+            gameSpeed = 3.0f;
+        }
     }
 }

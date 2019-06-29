@@ -15,6 +15,7 @@ public class EnemyRectangleController : MonoBehaviour
     private float speed;
     public int damage;        // enemy damage
     public int score;
+    private float gameSpeed;
 
     public float raycastDistance;   // distance of the raycast from the enemy
     public float raycastRadius;      // radius of the raycast from the enemy
@@ -25,7 +26,9 @@ public class EnemyRectangleController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = startSpeed + Random.Range(-3,3);
+        gameSpeed = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>().gameSpeed;
+
+        speed = (startSpeed + Random.Range(-3,3)) * gameSpeed;
         position.x = Random.Range(-70, 70);
         if(position.x >= 40 || position.x <= -40) {
             position.y = Random.Range(-50, 50);
