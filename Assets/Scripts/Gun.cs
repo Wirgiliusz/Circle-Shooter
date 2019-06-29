@@ -7,7 +7,7 @@ public class Gun : MonoBehaviour
     public GameObject bullet;   // variable holding the bullet GameObject
     public Transform shotPoint; // variable holding GameObject that defines the shot point
 
-    public float startShotCooldown = 0.2f; // time between shots
+    public float startShotCooldown; // time between shots
     private float shotCooldown;
 
 

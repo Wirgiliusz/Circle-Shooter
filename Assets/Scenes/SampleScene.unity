@@ -362,7 +362,7 @@ MonoBehaviour:
     type: 3}
   enemyWave: {fileID: 7019015186378716304, guid: 59bec742525c8e64baab80f7ffba083c,
     type: 3}
-  startSpawnTimer: 1
+  startSpawnTimer: 1.5
 --- !u!4 &917014760
 Transform:
   m_ObjectHideFlags: 0

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float bulletVelocity = 20.0f;    // velocity of the bullet
-    public float lifeTime = 3.0f;           // time after bullet despawns
-    public int damage = 1;                  // damage of the bullet
+    public float bulletVelocity;    // velocity of the bullet
+    public float lifeTime;           // time after bullet despawns
+    public int damage;                  // damage of the bullet
 
-    public float raycastDistance = 0.05f;   // distance of the raycast from the bullet
-    public float raycastRadius = 0.1f;      // radius of the raycast from the bullet
+    public float raycastDistance;   // distance of the raycast from the bullet
+    public float raycastRadius;      // radius of the raycast from the bullet
     public LayerMask whatIsSolid;           // defines layers that are considered solid for bullet
 
 

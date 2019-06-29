@@ -8,15 +8,15 @@ public class EnemyWaveController : MonoBehaviour
     private Transform targetTransform;  // transform of the enemy target
     private Vector2 direction;          // enemy direction vector
 
-    public int health = 1;        // enemy health
-    public float startSpeed = 10f;     // enemy speed
+    public int health;        // enemy health
+    public float startSpeed;     // enemy speed
     private float speed;
-    public float frequency = 7f;
-    public float amplitude = 0.05f;
-    public int damage = 1;        // enemy damage
+    public float frequency;
+    public float amplitude;
+    public int damage;        // enemy damage
 
-    public float raycastDistance = 0.05f;   // distance of the raycast from the enemy
-    public float raycastRadius = 0.1f;      // radius of the raycast from the enemy
+    public float raycastDistance;   // distance of the raycast from the enemy
+    public float raycastRadius;      // radius of the raycast from the enemy
     public LayerMask whatIsSolid;           // defines layers that are solid for the enemy
 
     private Vector2 position;

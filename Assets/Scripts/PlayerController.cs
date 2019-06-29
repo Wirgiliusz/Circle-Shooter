@@ -6,10 +6,10 @@ public class PlayerController : MonoBehaviour
 {
     public GameObject particleEffectDeath;
 
-    public float baseRotationSpeed = 300.0f;    // rotation speed of the player
+    public float baseRotationSpeed;    // rotation speed of the player
     private float rotationSpeed;
-    public float sprintMultiplier = 1.5f;       // rotation speed multiplier for faster spinning
-    public int health = 3;                      // health of the player
+    public float sprintMultiplier;       // rotation speed multiplier for faster spinning
+    public int health;                      // health of the player
 
 
     // Start is called before the first frame update

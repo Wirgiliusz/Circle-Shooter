@@ -8,7 +8,7 @@ public class GameMaster : MonoBehaviour
     public GameObject enemyWave;
     private int currentEnemy = 0;
 
-    public float startSpawnTimer = 1.0f;
+    public float startSpawnTimer;
     private float spawnTimer;
 
     private Vector3 position;
