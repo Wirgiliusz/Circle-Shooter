@@ -15,7 +15,7 @@
   - [ ] d. Square enemy
   
 - [ ] 3. Gameplay:
-  - [ ] a. Score
+  - [x] a. Score
   - [ ] b. Gameplay speed based on score
   - [ ] c. Difficulty selection
   
