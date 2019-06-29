@@ -2,7 +2,7 @@
 
 ## TODO
 
-- [ ] 1. Player:
+- [x] 1. Player:
   - [x] a. Keyboard control (normal)
   - [x] b. Mouse control (easy)
   - [x] c. Shooting
