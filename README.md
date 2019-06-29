@@ -4,7 +4,7 @@
 
 - [ ] 1. Player:
   - [x] a. Keyboard control (normal)
-  - [ ] b. Mouse control (easy)
+  - [x] b. Mouse control (easy)
   - [x] c. Shooting
   
 - [ ] 2. Enemies:
@@ -17,7 +17,7 @@
 - [ ] 3. Gameplay:
   - [x] a. Score
   - [ ] b. Gameplay speed based on score
-  - [ ] c. Difficulty selection
+  - [x] c. Difficulty selection
   
 - [ ] 4. Aesthetics:
   - [ ] a. Player taking damage
