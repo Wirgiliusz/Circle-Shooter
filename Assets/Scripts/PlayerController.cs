@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public GameObject particleEffectDeath;
+    public GameObject particleEffectDamage;
     public GameObject playerHealth4;
     public GameObject playerHealth3;
     public GameObject playerHealth2;
@@ -76,7 +77,22 @@ public class PlayerController : MonoBehaviour
 
     // Function allowing making damage to the player
     public void TakeDamage(int damage) {
+        Instantiate(particleEffectDamage, transform.position, Quaternion.identity);
         GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>().combo = 0;
         health -= damage;
+        if(health == 4) {
+            Instantiate(playerHealth4, transform);
+        }
+        if(health == 3) {
+            Instantiate(playerHealth3, transform);
+        }
+        if(health == 2) {
+            Instantiate(playerHealth2, transform);
+            GetComponent<SpriteRenderer>().color = new Color(0.93f,0.93f,0.93f);
+        }
+        if(health == 1) {
+            Instantiate(playerHealth1, transform);
+            GetComponent<SpriteRenderer>().color = new Color(0.85f,0.85f,0.85f);
+        }
     }
 }

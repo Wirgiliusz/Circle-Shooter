@@ -446,6 +446,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particleEffectDeath: {fileID: 1109842496116625568, guid: ed63255629941054a92133e3c5358bf7,
     type: 3}
+  particleEffectDamage: {fileID: 6589843028586414764, guid: bf5433e85c0cc904199e96feef94f79f,
+    type: 3}
   playerHealth4: {fileID: 8099706891891818748, guid: 14e3eda349694e7489355587ef6e8e7f,
     type: 3}
   playerHealth3: {fileID: 3096771496710120375, guid: ea73060445bd7ea4c93993816a64cc52,
