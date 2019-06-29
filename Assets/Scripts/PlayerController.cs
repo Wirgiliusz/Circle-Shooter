@@ -56,6 +56,7 @@ public class PlayerController : MonoBehaviour
 
     // Function allowing making damage to the player
     public void TakeDamage(int damage) {
+        GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>().combo = 0;
         health -= damage;
     }
 }

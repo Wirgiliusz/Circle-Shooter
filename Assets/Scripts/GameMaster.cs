@@ -20,6 +20,8 @@ public class GameMaster : MonoBehaviour
     private float x, y;
 
     public int totalScore = 0;
+    private float scoreMultiplier = 1.0f;
+    public int combo = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +55,19 @@ public class GameMaster : MonoBehaviour
     }
 
     public void addScore(int score) {
-        totalScore += score;
+        if(combo < 5) {
+            scoreMultiplier = 1.0f;
+        }
+        if(combo >= 5) {
+            scoreMultiplier = 1.2f;
+        }
+        if(combo >= 10) {
+            scoreMultiplier = 1.5f;
+        }
+        if(combo >= 15) {
+            scoreMultiplier = 2.0f;
+        }
+
+        totalScore = totalScore + Mathf.RoundToInt(score*scoreMultiplier);
     }
 }

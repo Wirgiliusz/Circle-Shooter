@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7190359031115706965}
   - component: {fileID: 3898244034457778403}
   - component: {fileID: 40372311169370873}
+  - component: {fileID: 2377639281543232022}
   m_Layer: 0
   m_Name: CircleEnemy Particle System
   m_TagString: Untagged
@@ -1538,7 +1539,7 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 21300000, guid: 7771a133a89ee064b8b428d1251858e7, type: 3}
+    - sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -4812,3 +4813,15 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &2377639281543232022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4757132479511866559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a413f6ea112e4ff4aa13853820de035c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

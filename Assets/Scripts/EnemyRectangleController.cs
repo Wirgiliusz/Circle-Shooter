@@ -54,6 +54,7 @@ public class EnemyRectangleController : MonoBehaviour
         // checking if enemy is dead
         if(health <= 0) {
             GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>().addScore(score);
+            GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>().combo++;
             Destroy(gameObject);
         }
 
