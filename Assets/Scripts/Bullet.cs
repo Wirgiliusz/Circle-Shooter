@@ -32,11 +32,14 @@ public class Bullet : MonoBehaviour
 
         RaycastHit2D hitInfo = Physics2D.CircleCast(transform.position, raycastRadius, transform.up, raycastDistance, whatIsSolid); // raycasts circle of raycastRadius that collects collision information
         if(hitInfo.collider != null) {  // if there was collision
-            if(hitInfo.collider.CompareTag("Enemy")) {  // and with an object tagged "Enemy"
+            if(hitInfo.collider.CompareTag("EnemyRectangle")) {  // and with an object tagged "Enemy"
                 hitInfo.collider.GetComponent<EnemyRectangleController>().TakeDamage(damage);    // get that object script and use TakeDamage function (make damage to the enemy)
             } 
             else if(hitInfo.collider.CompareTag("EnemyWave")) {
                 hitInfo.collider.GetComponent<EnemyWaveController>().TakeDamage(damage);    // get that object script and use TakeDamage function (make damage to the enemy)
+            }
+            else if(hitInfo.collider.CompareTag("EnemyCircle")) {
+                hitInfo.collider.GetComponent<EnemyCircleController>().TakeDamage(damage);    // get that object script and use TakeDamage function (make damage to the enemy)
             }
             Destroy(gameObject);    // destroy projectile function
         }
