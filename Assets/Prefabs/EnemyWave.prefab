@@ -129,6 +129,7 @@ MonoBehaviour:
   frequency: 7
   amplitude: 0.05
   damage: 1
+  score: 100
   raycastDistance: 0.05
   raycastRadius: 0.1
   whatIsSolid:

@@ -233,6 +233,7 @@ MonoBehaviour:
   startSpeed: 10
   startRevolvingSpeed: 0.1
   damage: 1
+  score: 150
   raycastDistance: 0.05
   raycastRadius: 0.5
   whatIsSolid:

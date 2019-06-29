@@ -127,6 +127,7 @@ MonoBehaviour:
   health: 1
   startSpeed: 10
   damage: 1
+  score: 50
   raycastDistance: 0.05
   raycastRadius: 0.5
   whatIsSolid:

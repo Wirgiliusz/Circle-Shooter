@@ -12,6 +12,7 @@ public class EnemyRectangleController : MonoBehaviour
     public float startSpeed;     // enemy speed
     private float speed;
     public int damage;        // enemy damage
+    public int score;
 
     public float raycastDistance;   // distance of the raycast from the enemy
     public float raycastRadius;      // radius of the raycast from the enemy
@@ -52,6 +53,7 @@ public class EnemyRectangleController : MonoBehaviour
     {
         // checking if enemy is dead
         if(health <= 0) {
+            GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>().addScore(score);
             Destroy(gameObject);
         }
 

@@ -19,6 +19,8 @@ public class GameMaster : MonoBehaviour
     private Vector3 position;
     private float x, y;
 
+    public int totalScore = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +50,9 @@ public class GameMaster : MonoBehaviour
             GameObject.Instantiate(enemyCircle);
             spawnTimerCircle = startSpawnTimerCircle;
         }
+    }
 
+    public void addScore(int score) {
+        totalScore += score;
     }
 }

@@ -16,6 +16,7 @@ public class EnemyCircleController : MonoBehaviour
     private float revolvingSpeed;
     private int revolvingDirection = 0;
     public int damage;        // enemy damage
+    public int score;
 
     public float raycastDistance;   // distance of the raycast from the enemy
     public float raycastRadius;      // radius of the raycast from the enemy
@@ -64,6 +65,7 @@ public class EnemyCircleController : MonoBehaviour
     {
         // checking if enemy is dead
         if(health <= 0) {
+            GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>().addScore(score);
             Destroy(gameObject);
         }
 
