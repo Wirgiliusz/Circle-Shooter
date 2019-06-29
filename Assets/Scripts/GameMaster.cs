@@ -48,12 +48,12 @@ public class GameMaster : MonoBehaviour
                 GameObject.Instantiate(enemyWave);
                 currentEnemy = 0;
             }
-            spawnTimer = startSpawnTimer;
+            spawnTimer = startSpawnTimer - 0.15f*gameSpeed;
         }
 
         if(spawnTimerCircle <= 0) {
             GameObject.Instantiate(enemyCircle);
-            spawnTimerCircle = startSpawnTimerCircle;
+            spawnTimerCircle = startSpawnTimerCircle - 0.2f*gameSpeed;
         }
     }
 
@@ -71,7 +71,7 @@ public class GameMaster : MonoBehaviour
             scoreMultiplier = 2.0f;
         }
 
-        totalScore = totalScore + Mathf.RoundToInt(score*scoreMultiplier);
+        totalScore = totalScore + Mathf.RoundToInt(score*scoreMultiplier*gameSpeed);
 
         if(totalScore >= 1000 && totalScore < 3000) {
             gameSpeed = 1.2f;

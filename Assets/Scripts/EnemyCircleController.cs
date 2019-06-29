@@ -33,7 +33,7 @@ public class EnemyCircleController : MonoBehaviour
         gameSpeed = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>().gameSpeed;
 
         speed = (startSpeed + Random.Range(-3,3)) * gameSpeed;
-        revolvingSpeed = startRevolvingSpeed + Random.Range(-0.03f,0.03f);
+        revolvingSpeed = startRevolvingSpeed + Random.Range(-0.04f,0.02f) + 0.01f*gameSpeed; ;
         while(revolvingDirection == 0) {
             revolvingDirection = Random.Range(-1,2);
         }

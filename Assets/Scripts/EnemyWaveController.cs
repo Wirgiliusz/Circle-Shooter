@@ -31,6 +31,10 @@ public class EnemyWaveController : MonoBehaviour
         gameSpeed = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>().gameSpeed;
 
         speed = (startSpeed + Random.Range(-3,3)) * gameSpeed;
+        frequency += Random.Range(-2.3f,1.7f) + 0.3f*gameSpeed;
+        amplitude += Random.Range(-0.07f,0.03f) + 0.02f*gameSpeed;;
+
+
         position.x = Random.Range(-70, 70);
         if(position.x >= 40 || position.x <= -40) {
             position.y = Random.Range(-50, 50);
@@ -51,9 +55,6 @@ public class EnemyWaveController : MonoBehaviour
             direction = targetTransform.position - transform.position;  // sets direction to face player
             transform.up = direction;   // and rotates
         }
-        
-        frequency += Random.Range(-2f,2f);
-        amplitude += Random.Range(-0.05f,0.05f);
     }
 
 
