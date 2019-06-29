@@ -20,7 +20,7 @@
   - [x] c. Difficulty selection
   
 - [ ] 4. Aesthetics:
-  - [ ] a. Player taking damage
+  - [x] a. Player taking damage
   - [ ] b. Enemy lefting colors
   
 - [ ] 5. Menu:
