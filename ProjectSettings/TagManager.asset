@@ -9,6 +9,10 @@ TagManager:
   - EnemyCircle
   - EnemyRectangle
   - GameMaster
+  - PlayerHealth4
+  - PlayerHealth3
+  - PlayerHealth2
+  - PlayerHealth1
   layers:
   - Default
   - TransparentFX

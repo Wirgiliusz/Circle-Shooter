@@ -364,6 +364,7 @@ MonoBehaviour:
     type: 3}
   enemyCircle: {fileID: 5187318814729678527, guid: af0c0b2eb67fe3945b957c5a43252c73,
     type: 3}
+  gameModeEasy: 1
   startSpawnTimer: 1.5
   startSpawnTimerCircle: 3
   totalScore: 0
@@ -445,9 +446,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particleEffectDeath: {fileID: 1109842496116625568, guid: ed63255629941054a92133e3c5358bf7,
     type: 3}
+  playerHealth4: {fileID: 8099706891891818748, guid: 14e3eda349694e7489355587ef6e8e7f,
+    type: 3}
+  playerHealth3: {fileID: 3096771496710120375, guid: ea73060445bd7ea4c93993816a64cc52,
+    type: 3}
+  playerHealth2: {fileID: 1091723263758586012, guid: 81b5f4d0a5c91aa459453e4ccbc68dab,
+    type: 3}
+  playerHealth1: {fileID: 3212733546532908206, guid: 9d55145ea5b79974f99cd65d6b6cca29,
+    type: 3}
   baseRotationSpeed: 300
   sprintMultiplier: 1.5
-  health: 30
+  health: 5
 --- !u!58 &992992446
 CircleCollider2D:
   m_ObjectHideFlags: 0

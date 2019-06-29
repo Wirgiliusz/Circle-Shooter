@@ -5,6 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public GameObject particleEffectDeath;
+    public GameObject playerHealth4;
+    public GameObject playerHealth3;
+    public GameObject playerHealth2;
+    public GameObject playerHealth1;
 
     public float baseRotationSpeed;    // rotation speed of the player
     private float rotationSpeed;
@@ -52,11 +56,18 @@ public class PlayerController : MonoBehaviour
 
         }
         
-
-        if(health == 2) {
+        if(health == 4 && !GameObject.FindGameObjectWithTag("PlayerHealth4")) {
+            Instantiate(playerHealth4, transform);
+        }
+        if(health == 3 && !GameObject.FindGameObjectWithTag("PlayerHealth3")) {
+            Instantiate(playerHealth3, transform);
+        }
+        if(health == 2 && !GameObject.FindGameObjectWithTag("PlayerHealth2")) {
+            Instantiate(playerHealth2, transform);
             GetComponent<SpriteRenderer>().color = new Color(0.93f,0.93f,0.93f);
         }
-        else if(health == 1) {
+        if(health == 1 && !GameObject.FindGameObjectWithTag("PlayerHealth1")) {
+            Instantiate(playerHealth1, transform);
             GetComponent<SpriteRenderer>().color = new Color(0.85f,0.85f,0.85f);
         }
 
