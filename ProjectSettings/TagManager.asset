@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - EnemyWave
+  - EnemyCircle
+  - EnemyRectangle
+  - GameMaster
   layers:
   - Default
   - TransparentFX

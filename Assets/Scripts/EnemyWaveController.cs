@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyWaveController : MonoBehaviour
 {
+    public GameObject comboText;
+    public GameObject scoreText;
     public GameObject destroyParticleEffect;
     private Transform targetTransform;  // transform of the enemy target
     private Vector2 direction;          // enemy direction vector
@@ -59,6 +61,14 @@ public class EnemyWaveController : MonoBehaviour
         if(health <= 0) {
             GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>().addScore(score);
             GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>().combo++;
+
+            GameObject scoreTextMesh = Instantiate(scoreText, transform.position, Quaternion.identity);
+            scoreTextMesh.GetComponent<ScoreTextMesh>().scoreToAdd = score;
+            scoreTextMesh.GetComponent<TextMesh>().color = GetComponent<SpriteRenderer>().color;
+
+            GameObject comboTextMesh = Instantiate(comboText, transform.position, Quaternion.identity);
+            comboTextMesh.GetComponent<TextMesh>().color = GetComponent<SpriteRenderer>().color;
+            
             Destroy(gameObject);
         }
 

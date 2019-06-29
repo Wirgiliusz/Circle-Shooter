@@ -227,6 +227,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c0efd601135391429122f9c3f3ad2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  comboText: {fileID: 5890145855728852174, guid: 73c5ff42b935c8e4ea323fc27171f8f7,
+    type: 3}
+  scoreText: {fileID: 2244445206992010843, guid: 7a47eed17b330714e949bf71ed0b864c,
+    type: 3}
   destroyParticleEffect: {fileID: 4757132479511866559, guid: 5a56dc488581abf45a9d61ffe20ef81e,
     type: 3}
   health: 1
