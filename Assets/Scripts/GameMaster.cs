@@ -8,6 +8,8 @@ public class GameMaster : MonoBehaviour
     public GameObject enemyWave;
     public GameObject enemyCircle;
 
+    public bool gameModeEasy = false;
+
     private int currentEnemy = 0;
 
     public float startSpawnTimer;

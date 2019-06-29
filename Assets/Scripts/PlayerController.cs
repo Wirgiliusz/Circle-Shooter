@@ -11,10 +11,11 @@ public class PlayerController : MonoBehaviour
     public float sprintMultiplier;       // rotation speed multiplier for faster spinning
     public int health;                      // health of the player
 
-
+    private bool gameModeEasy;
     // Start is called before the first frame update
     void Start()
     {
+        gameModeEasy = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>().gameModeEasy;
         rotationSpeed = baseRotationSpeed;  // setting rotation speed
     }
 
@@ -29,20 +30,28 @@ public class PlayerController : MonoBehaviour
         }
 
         // - - - Player controlls - - - //
-        // rotating left (<-) or right (->)
-        if(Input.GetKey(KeyCode.LeftArrow)) {
-            transform.Rotate(0,0,rotationSpeed*Time.deltaTime);
-        }
-        else if(Input.GetKey(KeyCode.RightArrow)) {
-            transform.Rotate(0,0,-rotationSpeed*Time.deltaTime);
-        }
-        // faster rotation (shift)
-        if(Input.GetKey(KeyCode.LeftShift)) {
-            rotationSpeed = baseRotationSpeed * sprintMultiplier;
+        if(!gameModeEasy) {
+            // rotating left (<-) or right (->)
+            if(Input.GetKey(KeyCode.LeftArrow)) {
+                transform.Rotate(0,0,rotationSpeed*Time.deltaTime);
+            }
+            else if(Input.GetKey(KeyCode.RightArrow)) {
+                transform.Rotate(0,0,-rotationSpeed*Time.deltaTime);
+            }
+            // faster rotation (shift)
+            if(Input.GetKey(KeyCode.LeftShift)) {
+                rotationSpeed = baseRotationSpeed * sprintMultiplier;
+            }
+            else {
+                rotationSpeed = baseRotationSpeed;
+            }
         }
         else {
-            rotationSpeed = baseRotationSpeed;
+            Vector2 mouseScreenPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            transform.up = mouseScreenPosition - (Vector2)transform.position;
+
         }
+        
 
         if(health == 2) {
             GetComponent<SpriteRenderer>().color = new Color(0.93f,0.93f,0.93f);
