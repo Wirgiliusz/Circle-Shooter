@@ -58,13 +58,13 @@ public class GameMaster : MonoBehaviour
         if(combo < 5) {
             scoreMultiplier = 1.0f;
         }
-        if(combo >= 5) {
+        else if(combo >= 5 && combo < 10) {
             scoreMultiplier = 1.2f;
         }
-        if(combo >= 10) {
+        else if(combo >= 10 && combo < 15) {
             scoreMultiplier = 1.5f;
         }
-        if(combo >= 15) {
+        else if (combo >= 15) {
             scoreMultiplier = 2.0f;
         }
 

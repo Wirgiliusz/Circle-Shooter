@@ -5,6 +5,7 @@ using UnityEngine;
 public class ComboTextMesh : MonoBehaviour
 {
     TextMesh tm;
+    int combo;
     
     // Start is called before the first frame update
     void Start()
