@@ -23,6 +23,13 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(transform.position.x > 36 || transform.position.x < -36) {
+            Destroy(gameObject);
+        }
+        else if (transform.position.y > 20.3 || transform.position.y < -20.3) {
+            Destroy(gameObject);
+        }
+
         if(lifeTime <= 0) {
             Destroy(gameObject);
         }
