@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        gameModeEasy = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>().gameModeEasy;
+
         // checking if player is dead
         if(health <= 0) {
             Instantiate(particleEffectDeath, transform.position, Quaternion.identity);

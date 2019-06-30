@@ -98,4 +98,12 @@ public class GameMaster : MonoBehaviour
     public void SetInGame(bool set) {
         inGame = set;
     }
+    public void changeGamemode() {
+        if(gameModeEasy == true) {
+            gameModeEasy = false;
+        }
+        else {
+            gameModeEasy = true;
+        }
+    }
 }
