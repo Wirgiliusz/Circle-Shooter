@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
         // checking if player is dead
         if(health <= 0) {
             Instantiate(particleEffectDeath, transform.position, Quaternion.identity);
+            GameObject.FindGameObjectWithTag("SoundManager").GetComponent<AudioManager>().playSound("playerExplosion");
             Destroy(gameObject);
         }
 

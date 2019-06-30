@@ -60,6 +60,7 @@ public class Bullet : MonoBehaviour
             else if(hitInfo.collider.CompareTag("EnemyCircle")) {
                 hitInfo.collider.GetComponent<EnemyCircleController>().TakeDamage(damage);    // get that object script and use TakeDamage function (make damage to the enemy)
             }
+            GameObject.FindGameObjectWithTag("SoundManager").GetComponent<AudioManager>().playSound("shotHit");
             Destroy(gameObject);    // destroy projectile function
         }
 
