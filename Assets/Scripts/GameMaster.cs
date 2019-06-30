@@ -8,6 +8,8 @@ public class GameMaster : MonoBehaviour
     public GameObject enemyWave;
     public GameObject enemyCircle;
 
+    public bool inGame = false;
+
     public bool gameModeEasy = false;
 
     private int currentEnemy = 0;
@@ -36,25 +38,28 @@ public class GameMaster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        spawnTimer -= Time.deltaTime;
-        spawnTimerCircle -= Time.deltaTime;
+        if(inGame) {
+            spawnTimer -= Time.deltaTime;
+            spawnTimerCircle -= Time.deltaTime;
 
-        if(spawnTimer <= 0) {
-            if(currentEnemy == 0) {
-                GameObject.Instantiate(enemyRectangle);
-                currentEnemy = 1;
+            if(spawnTimer <= 0) {
+                if(currentEnemy == 0) {
+                    GameObject.Instantiate(enemyRectangle);
+                    currentEnemy = 1;
+                }
+                else if (currentEnemy == 1) {
+                    GameObject.Instantiate(enemyWave);
+                    currentEnemy = 0;
+                }
+                spawnTimer = startSpawnTimer - 0.15f*gameSpeed;
             }
-            else if (currentEnemy == 1) {
-                GameObject.Instantiate(enemyWave);
-                currentEnemy = 0;
-            }
-            spawnTimer = startSpawnTimer - 0.15f*gameSpeed;
-        }
 
-        if(spawnTimerCircle <= 0) {
-            GameObject.Instantiate(enemyCircle);
-            spawnTimerCircle = startSpawnTimerCircle - 0.2f*gameSpeed;
+            if(spawnTimerCircle <= 0) {
+                GameObject.Instantiate(enemyCircle);
+                spawnTimerCircle = startSpawnTimerCircle - 0.2f*gameSpeed;
+            }
         }
+          
     }
 
     public void addScore(int score) {
