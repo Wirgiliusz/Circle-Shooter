@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public GameObject particleEffectDeath;
     public GameObject particleEffectDamage;
+    private Shake shake;
     public GameObject playerHealth4;
     public GameObject playerHealth3;
     public GameObject playerHealth2;
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();
         gameModeEasy = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>().gameModeEasy;
         rotationSpeed = baseRotationSpeed;  // setting rotation speed
     }
@@ -78,6 +80,7 @@ public class PlayerController : MonoBehaviour
     // Function allowing making damage to the player
     public void TakeDamage(int damage) {
         Instantiate(particleEffectDamage, transform.position, Quaternion.identity);
+        shake.CamShake();
         GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>().combo = 0;
         health -= damage;
         if(health == 4) {
