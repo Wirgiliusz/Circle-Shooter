@@ -1,10 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Profile : MonoBehaviour
 {
     private GameMaster gm;
+    public TextMeshPro tmName;
+    public TextMeshPro tmTotalScore;
+    public TextMeshPro tmBestScore;
 
     public string playerName;
     public int playerLevel;
@@ -15,6 +19,7 @@ public class Profile : MonoBehaviour
     void Start()
     {
         gm = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>();
+        calculateLevel();
     }
 
     // Update is called once per frame
@@ -25,5 +30,8 @@ public class Profile : MonoBehaviour
 
     public void calculateLevel() {
         playerLevel = Mathf.FloorToInt(Mathf.Pow(totalScore+800000,(1f/3f))-91.8f);
+        tmName.text = playerName;
+        tmTotalScore.text = totalScore.ToString() + " (" + playerLevel.ToString() + "lvl)";
+        tmBestScore.text = bestScore.ToString();
     }
 }
