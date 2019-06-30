@@ -14,14 +14,16 @@
   - [ ] c. Triangle enemy
   - [ ] d. Square enemy
   
-- [ ] 3. Gameplay:
+- [x] 3. Gameplay:
   - [x] a. Score
-  - [ ] b. Gameplay speed based on score
+  - [x] b. Gameplay speed based on score
   - [x] c. Difficulty selection
   
 - [ ] 4. Aesthetics:
   - [x] a. Player taking damage
   - [ ] b. Enemy lefting colors
+  - [x] c. Screen shake when player is taking damage
+  - [x] d. Gun shot animation
   
 - [ ] 5. Menu:
   - [ ] a. Difficulty selection (easy/normal)
