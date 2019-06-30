@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6589843028586414763}
   - component: {fileID: 6589843028586414762}
   - component: {fileID: 6589843028586414765}
+  - component: {fileID: 1946034235243311360}
   m_Layer: 0
   m_Name: Player Damage Particle System
   m_TagString: Untagged
@@ -4812,3 +4813,15 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &1946034235243311360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6589843028586414764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1f4c885a348a0419e47f9ea62676a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

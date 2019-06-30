@@ -20,9 +20,12 @@ public class ScoreTextMesh : MonoBehaviour
     void Update()
     {
         tm.text = (score - scoreToAdd).ToString();
-        tm.color = new Color(tm.color.r, tm.color.g, tm.color.b, tm.color.a - 0.005f);
+        tm.color = new Color(tm.color.r, tm.color.g, tm.color.b, tm.color.a - 0.01f);
         if(scoreToAdd > 0) {
             scoreToAdd--;
+        }
+        if(tm.color.a<=0) {
+            Destroy(gameObject);
         }
     }
 }

@@ -18,6 +18,9 @@ public class ComboTextMesh : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tm.color = new Color(tm.color.r, tm.color.g, tm.color.b, tm.color.a - 0.005f);
+        tm.color = new Color(tm.color.r, tm.color.g, tm.color.b, tm.color.a - 0.01f);
+        if(tm.color.a<=0) {
+            Destroy(gameObject);
+        }
     }
 }
