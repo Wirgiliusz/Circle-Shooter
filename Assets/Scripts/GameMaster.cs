@@ -86,7 +86,10 @@ public class GameMaster : MonoBehaviour
 
         totalScore = totalScore + Mathf.RoundToInt(score*scoreMultiplier*gameSpeed);
 
-        if(totalScore >= 1000 && totalScore < 3000) {
+        if(totalScore < 1000) {
+            gameSpeed = 1.0f;
+        }
+        else if(totalScore >= 1000 && totalScore < 3000) {
             gameSpeed = 1.2f;
         }
         else if(totalScore >= 3000 && totalScore < 5000) {

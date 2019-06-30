@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     public float sprintMultiplier;       // rotation speed multiplier for faster spinning
     public int health;                      // health of the player
 
+    private float keyHeldTime = 0;
+
     private bool gameModeEasy;
     // Start is called before the first frame update
     void Start()
@@ -61,7 +63,28 @@ public class PlayerController : MonoBehaviour
         else {
             Vector2 mouseScreenPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.up = mouseScreenPosition - (Vector2)transform.position;
+        }
 
+        if(Input.GetKey(KeyCode.R) && GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>().inGame == true) {
+            keyHeldTime += Time.deltaTime;
+            if(keyHeldTime >= 0.5f && health == 5) {
+                health -= 1;
+            }
+            else if(keyHeldTime >= 0.7f && health == 4) {
+                health -= 1;
+            }
+            else if(keyHeldTime >= 0.9f && health == 3) {
+                health -= 1;
+            }
+            else if(keyHeldTime >= 1.0f && health == 2) {
+                health -= 1;
+            }
+            else if(keyHeldTime >= 1.1f && health == 1) {
+                health -= 1;
+            }
+        }
+        else {
+            keyHeldTime = 0;
         }
         
         if(health == 4 && !GameObject.FindGameObjectWithTag("PlayerHealth4")) {
