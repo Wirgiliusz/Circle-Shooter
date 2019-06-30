@@ -24,6 +24,11 @@
   - [ ] b. Enemy lefting colors
   - [x] c. Screen shake when player is taking damage
   - [x] d. Gun shot animation
+  - [x] e. Gun shot sound
+  - [x] f. Enemy hit sound
+  - [x] g. Player death sound
   
 - [ ] 5. Menu:
-  - [ ] a. Difficulty selection (easy/normal)
+  - [x] a. Difficulty selection (easy/normal)
+  - [ ] b. Graphics settings
+  
