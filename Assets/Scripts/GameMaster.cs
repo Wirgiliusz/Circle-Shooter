@@ -7,6 +7,8 @@ public class GameMaster : MonoBehaviour
     public GameObject enemyRectangle;
     public GameObject enemyWave;
     public GameObject enemyCircle;
+    public GameObject player;
+    public GameObject restartButton;
 
     public bool inGame = false;
 
@@ -39,6 +41,7 @@ public class GameMaster : MonoBehaviour
     void Update()
     {
         if(inGame) {
+            restartButton.SetActive(false);
             spawnTimer -= Time.deltaTime;
             spawnTimerCircle -= Time.deltaTime;
 
@@ -58,6 +61,11 @@ public class GameMaster : MonoBehaviour
                 GameObject.Instantiate(enemyCircle);
                 spawnTimerCircle = startSpawnTimerCircle - 0.2f*gameSpeed;
             }
+        }
+        else {
+            Destroy(GameObject.FindGameObjectWithTag("EnemyRectangle"));
+            Destroy(GameObject.FindGameObjectWithTag("EnemyWave"));
+            Destroy(GameObject.FindGameObjectWithTag("EnemyCircle"));
         }
 
     }
@@ -105,5 +113,12 @@ public class GameMaster : MonoBehaviour
         else {
             gameModeEasy = true;
         }
+    }
+
+    public void restartGame() {
+        inGame = true;
+        Instantiate(player);
+        totalScore = 0;
+        combo = 0;
     }
 }

@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour
         if(health <= 0) {
             Instantiate(particleEffectDeath, transform.position, Quaternion.identity);
             GameObject.FindGameObjectWithTag("SoundManager").GetComponent<AudioManager>().playSound("playerExplosion");
+            GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>().inGame = false;
+            GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>().restartButton.SetActive(true);
             Destroy(gameObject);
         }
 
