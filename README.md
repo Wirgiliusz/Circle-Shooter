@@ -6,6 +6,7 @@
   - [x] a. Keyboard control (normal)
   - [x] b. Mouse control (easy)
   - [x] c. Shooting
+  - [x] d. Restart 
   
 - [ ] 2. Enemies:
   - [x] a. Rectangle enemy
