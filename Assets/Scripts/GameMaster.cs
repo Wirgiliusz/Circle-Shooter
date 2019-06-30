@@ -59,7 +59,7 @@ public class GameMaster : MonoBehaviour
                 spawnTimerCircle = startSpawnTimerCircle - 0.2f*gameSpeed;
             }
         }
-          
+
     }
 
     public void addScore(int score) {
@@ -93,5 +93,9 @@ public class GameMaster : MonoBehaviour
         else if(totalScore >= 15000) {
             gameSpeed = 3.0f;
         }
+    }
+
+    public void SetInGame(bool set) {
+        inGame = set;
     }
 }
