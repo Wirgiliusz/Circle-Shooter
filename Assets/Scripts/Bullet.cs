@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float bulletVelocity;    // velocity of the bullet
+    
     public float lifeTime;           // time after bullet despawns
     public int damage;                  // damage of the bullet
 
@@ -12,10 +13,19 @@ public class Bullet : MonoBehaviour
     public float raycastRadius;      // radius of the raycast from the bullet
     public LayerMask whatIsSolid;           // defines layers that are considered solid for bullet
 
-
+    private bool inGame;
+    private float gameSpeed;
     // Start is called before the first frame update
     void Start()
     {
+        inGame = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>().inGame;
+        gameSpeed = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>().gameSpeed;        
+        if(!inGame) {
+            bulletVelocity = 200f;
+        }
+        else {
+            bulletVelocity = bulletVelocity + 5f*gameSpeed;
+        }
 
     }
 
@@ -23,11 +33,13 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.x > 36 || transform.position.x < -36) {
-            Destroy(gameObject);
-        }
-        else if (transform.position.y > 20.3 || transform.position.y < -20.3) {
-            Destroy(gameObject);
+        if(inGame) {
+            if(transform.position.x > 36 || transform.position.x < -36) {
+                Destroy(gameObject);
+            }
+            else if (transform.position.y > 20.3 || transform.position.y < -20.3) {
+                Destroy(gameObject);
+            }
         }
 
         if(lifeTime <= 0) {

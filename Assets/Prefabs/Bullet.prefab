@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 320257f7e58c5e946a3883b99f909a4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletVelocity: 25
+  startBulletVelocity: 25
   lifeTime: 3
   damage: 1
   raycastDistance: 0.05
