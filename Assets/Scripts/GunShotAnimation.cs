@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shake : MonoBehaviour
+public class GunShotAnimation : MonoBehaviour
 {
-    public Animator camAnim;
+    public Animator gunAnim;
 
 
-    public void CamShake() {
-        camAnim.SetTrigger("shake");
+    public void GunAnim() {
+        gunAnim.SetTrigger("shot");
     }
 
     // Start is called before the first frame update

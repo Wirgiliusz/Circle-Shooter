@@ -30,6 +30,7 @@ public class Gun : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0)) {
                 Instantiate(bullet, shotPoint.position, transform.parent.rotation); // spawns bullet at shot point position with player rotation
                 shotCooldown = startShotCooldown - gameSpeed*0.03f;   // resets shot cooldown
+                GetComponent<GunShotAnimation>().GunAnim();
             }
         }
         else {
