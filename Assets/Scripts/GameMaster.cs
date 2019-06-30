@@ -9,6 +9,7 @@ public class GameMaster : MonoBehaviour
     public GameObject enemyCircle;
     public GameObject player;
     public GameObject restartButton;
+    public Profile profile;
 
     public bool inGame = false;
 
@@ -121,6 +122,11 @@ public class GameMaster : MonoBehaviour
     public void restartGame() {
         inGame = true;
         Instantiate(player);
+        profile.totalScore += totalScore;
+        if(totalScore > profile.bestScore) {
+            profile.bestScore = totalScore;
+        }
+        profile.calculateLevel();
         totalScore = 0;
         combo = 0;
     }
