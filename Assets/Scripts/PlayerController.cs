@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -45,6 +46,8 @@ public class PlayerController : MonoBehaviour
             gm.statistics.SetActive(true);
             gm.restartButton.SetActive(true);
             gm.menuButton.SetActive(true);
+            gm.scoreText.GetComponent<TextMeshProUGUI>().text = gm.totalScore.ToString();
+            gm.scoreText.SetActive(true);
             Destroy(gameObject);
         }
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameMaster : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class GameMaster : MonoBehaviour
     public GameObject restartButton;
     public GameObject menuButton;
     public GameObject backButton;
+    public GameObject scoreText;
 
     // Player Profile 
     public GameObject profile;
@@ -29,7 +31,6 @@ public class GameMaster : MonoBehaviour
     private float scoreMultiplier = 1.0f;
     public int combo = 0;
     public float gameSpeed = 1.0f;
-    public bool inMenu = true;
 
     // Enemy spawning
     private int currentEnemy = 0;   // to alternate between enemies
@@ -54,6 +55,7 @@ public class GameMaster : MonoBehaviour
             restartButton.SetActive(false);
             menuButton.SetActive(false);
             statistics.SetActive(false);
+            scoreText.SetActive(false);
 
             spawnTimer -= Time.deltaTime;
             spawnTimerCircle -= Time.deltaTime;
@@ -80,7 +82,7 @@ public class GameMaster : MonoBehaviour
             Destroy(GameObject.FindGameObjectWithTag("EnemyWave"));
             Destroy(GameObject.FindGameObjectWithTag("EnemyCircle"));
         }
-        
+
     }
 
     public void addScore(int score) {
@@ -121,7 +123,6 @@ public class GameMaster : MonoBehaviour
 
     public void SetInGame(bool set) {
         inGame = set;
-        inMenu = false;
     }
     public void changeGamemode() {
         if(gameModeEasy == true) {
@@ -142,7 +143,6 @@ public class GameMaster : MonoBehaviour
     }
 
     public void toMenu() {
-        inMenu = true;
         Instantiate(player);
         menuButton.SetActive(false);
         totalScore = 0;
