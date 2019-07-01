@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
             transferScore();
             gm.statistics.SetActive(true);
             gm.restartButton.SetActive(true);
+            gm.menuButton.SetActive(true);
             Destroy(gameObject);
         }
 

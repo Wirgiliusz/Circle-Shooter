@@ -14,6 +14,8 @@ public class GameMaster : MonoBehaviour
 
     // Restart button GameObject
     public GameObject restartButton;
+    public GameObject menuButton;
+    public GameObject backButton;
 
     // Player Profile 
     public GameObject profile;
@@ -27,6 +29,7 @@ public class GameMaster : MonoBehaviour
     private float scoreMultiplier = 1.0f;
     public int combo = 0;
     public float gameSpeed = 1.0f;
+    public bool inMenu = true;
 
     // Enemy spawning
     private int currentEnemy = 0;   // to alternate between enemies
@@ -49,6 +52,7 @@ public class GameMaster : MonoBehaviour
     {
         if(inGame) {
             restartButton.SetActive(false);
+            menuButton.SetActive(false);
             statistics.SetActive(false);
 
             spawnTimer -= Time.deltaTime;
@@ -76,7 +80,7 @@ public class GameMaster : MonoBehaviour
             Destroy(GameObject.FindGameObjectWithTag("EnemyWave"));
             Destroy(GameObject.FindGameObjectWithTag("EnemyCircle"));
         }
-
+        
     }
 
     public void addScore(int score) {
@@ -117,6 +121,7 @@ public class GameMaster : MonoBehaviour
 
     public void SetInGame(bool set) {
         inGame = set;
+        inMenu = false;
     }
     public void changeGamemode() {
         if(gameModeEasy == true) {
@@ -130,11 +135,16 @@ public class GameMaster : MonoBehaviour
     public void restartGame() {
         inGame = true;
         Instantiate(player);
-        profileScript.totalScore += totalScore;
-        if(totalScore > profileScript.bestScore) {
-            profileScript.bestScore = totalScore;
-        }
-        profileScript.calculateLevel();
+        totalScore = 0;
+        combo = 0;
+        scoreMultiplier = 1.0f;
+        gameSpeed = 1.0f;
+    }
+
+    public void toMenu() {
+        inMenu = true;
+        Instantiate(player);
+        menuButton.SetActive(false);
         totalScore = 0;
         combo = 0;
         scoreMultiplier = 1.0f;
