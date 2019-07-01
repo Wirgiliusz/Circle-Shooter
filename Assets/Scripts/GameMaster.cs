@@ -4,36 +4,42 @@ using UnityEngine;
 
 public class GameMaster : MonoBehaviour
 {
+    // Enemies GameObjects
     public GameObject enemyRectangle;
     public GameObject enemyWave;
     public GameObject enemyCircle;
+
+    // Player GameObject
     public GameObject player;
+
+    // Restart button GameObject
     public GameObject restartButton;
-    public Profile profile;
 
+    // Player Profile 
+    public GameObject profile;
+    public GameObject statistics;
+    public Profile profileScript;
+
+    // game settings
     public bool inGame = false;
-
     public bool gameModeEasy = false;
-
-    private int currentEnemy = 0;
-
-    public float startSpawnTimer;
-    private float spawnTimer;
-
-    public float startSpawnTimerCircle;
-    private float spawnTimerCircle;
-
-    private Vector3 position;
-    private float x, y;
-
     public int totalScore = 0;
     private float scoreMultiplier = 1.0f;
     public int combo = 0;
     public float gameSpeed = 1.0f;
 
+    // Enemy spawning
+    private int currentEnemy = 0;   // to alternate between enemies
+    public float startSpawnTimer;   // spawn cooldown for enemies
+    private float spawnTimer;
+    public float startSpawnTimerCircle; // spawn cooldown for circle enemies
+    private float spawnTimerCircle;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        profileScript = profile.GetComponent<Profile>();
         spawnTimer = startSpawnTimer;
         spawnTimerCircle = startSpawnTimerCircle;
     }
@@ -43,6 +49,8 @@ public class GameMaster : MonoBehaviour
     {
         if(inGame) {
             restartButton.SetActive(false);
+            statistics.SetActive(false);
+
             spawnTimer -= Time.deltaTime;
             spawnTimerCircle -= Time.deltaTime;
 
@@ -122,12 +130,14 @@ public class GameMaster : MonoBehaviour
     public void restartGame() {
         inGame = true;
         Instantiate(player);
-        profile.totalScore += totalScore;
-        if(totalScore > profile.bestScore) {
-            profile.bestScore = totalScore;
+        profileScript.totalScore += totalScore;
+        if(totalScore > profileScript.bestScore) {
+            profileScript.bestScore = totalScore;
         }
-        profile.calculateLevel();
+        profileScript.calculateLevel();
         totalScore = 0;
         combo = 0;
+        scoreMultiplier = 1.0f;
+        gameSpeed = 1.0f;
     }
 }

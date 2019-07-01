@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public GameObject playerHealth3;
     public GameObject playerHealth2;
     public GameObject playerHealth1;
+    private GameMaster gm;
 
     public float baseRotationSpeed;    // rotation speed of the player
     private float rotationSpeed;
@@ -23,8 +24,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gm = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>();
         shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();
-        gameModeEasy = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>().gameModeEasy;
+        gameModeEasy = gm.gameModeEasy;
         rotationSpeed = baseRotationSpeed;  // setting rotation speed
     }
 
@@ -32,14 +34,16 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameModeEasy = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>().gameModeEasy;
+        gameModeEasy = gm.gameModeEasy;
 
         // checking if player is dead
         if(health <= 0) {
             Instantiate(particleEffectDeath, transform.position, Quaternion.identity);
             GameObject.FindGameObjectWithTag("SoundManager").GetComponent<AudioManager>().playSound("playerExplosion");
-            GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>().inGame = false;
-            GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>().restartButton.SetActive(true);
+            gm.inGame = false;
+            transferScore();
+            gm.statistics.SetActive(true);
+            gm.restartButton.SetActive(true);
             Destroy(gameObject);
         }
 
@@ -65,7 +69,7 @@ public class PlayerController : MonoBehaviour
             transform.up = mouseScreenPosition - (Vector2)transform.position;
         }
 
-        if(Input.GetKey(KeyCode.R) && GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>().inGame == true) {
+        if(Input.GetKey(KeyCode.R) && gm.inGame == true) {
             keyHeldTime += Time.deltaTime;
             if(keyHeldTime >= 0.5f && health == 5) {
                 health -= 1;
@@ -109,7 +113,7 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(int damage) {
         Instantiate(particleEffectDamage, transform.position, Quaternion.identity);
         shake.CamShake();
-        GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>().combo = 0;
+        gm.combo = 0;
         health -= damage;
         if(health == 4) {
             Instantiate(playerHealth4, transform);
@@ -125,5 +129,13 @@ public class PlayerController : MonoBehaviour
             Instantiate(playerHealth1, transform);
             GetComponent<SpriteRenderer>().color = new Color(0.85f,0.85f,0.85f);
         }
+    }
+
+    private void transferScore() {
+        gm.profileScript.totalScore += gm.totalScore;
+        if(gm.totalScore > gm.profileScript.bestScore) {
+            gm.profileScript.bestScore = gm.totalScore;
+        }
+        gm.profileScript.calculateLevel();
     }
 }
