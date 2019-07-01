@@ -43,7 +43,8 @@ public class PlayerController : MonoBehaviour
             GameObject.FindGameObjectWithTag("SoundManager").GetComponent<AudioManager>().playSound("playerExplosion");
             gm.inGame = false;
             transferScore();
-            gm.statistics.SetActive(true);
+            //gm.statistics.SetActive(true);
+            gm.profileScript.setShowingStatistics(true);
             gm.restartButton.SetActive(true);
             gm.menuButton.SetActive(true);
             gm.scoreText.GetComponent<TextMeshProUGUI>().text = gm.totalScore.ToString();

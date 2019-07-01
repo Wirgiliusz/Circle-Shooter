@@ -54,7 +54,7 @@ public class GameMaster : MonoBehaviour
         if(inGame) {
             restartButton.SetActive(false);
             menuButton.SetActive(false);
-            statistics.SetActive(false);
+            //statistics.SetActive(false);
             scoreText.SetActive(false);
 
             spawnTimer -= Time.deltaTime;
