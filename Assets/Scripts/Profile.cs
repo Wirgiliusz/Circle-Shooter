@@ -18,6 +18,7 @@ public class Profile : MonoBehaviour
     public bool hidingStatistics = false;
     public bool showingStatistics = false;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,10 +30,10 @@ public class Profile : MonoBehaviour
     void Update()
     {
         //calculateLevel();
-        if(hidingStatistics) {
+        if(hidingStatistics && !showingStatistics) {
             hideStatistics();
         }
-        if(showingStatistics) {
+        else if(showingStatistics) {
             showStatistics();
         }
     }
@@ -46,12 +47,11 @@ public class Profile : MonoBehaviour
 
     private void hideStatistics() {
         if(tmName.color.a > 0) {
-            tmName.color = new Color(tmName.color.r,tmName.color.g,tmName.color.b,tmName.color.a - 0.005f);
-            tmTotalScore.color = new Color(tmTotalScore.color.r,tmTotalScore.color.g,tmTotalScore.color.b,tmTotalScore.color.a - 0.005f);
-            tmBestScore.color = new Color(tmBestScore.color.r,tmBestScore.color.g,tmBestScore.color.b,tmBestScore.color.a - 0.005f);
+            tmName.color = new Color(tmName.color.r,tmName.color.g,tmName.color.b,tmName.color.a - 0.011f);
+            tmTotalScore.color = new Color(tmTotalScore.color.r,tmTotalScore.color.g,tmTotalScore.color.b,tmTotalScore.color.a - 0.011f);
+            tmBestScore.color = new Color(tmBestScore.color.r,tmBestScore.color.g,tmBestScore.color.b,tmBestScore.color.a - 0.011f);
         }
         else {
-            //gameObject.SetActive(false);
             hidingStatistics = false;
         }
     }
@@ -60,11 +60,10 @@ public class Profile : MonoBehaviour
     }
 
     public void showStatistics() {
-        //gameObject.SetActive(true);
         if(tmName.color.a < 1) {
-            tmName.color = new Color(tmName.color.r,tmName.color.g,tmName.color.b,tmName.color.a + 0.005f);
-            tmTotalScore.color = new Color(tmTotalScore.color.r,tmTotalScore.color.g,tmTotalScore.color.b,tmTotalScore.color.a + 0.005f);
-            tmBestScore.color = new Color(tmBestScore.color.r,tmBestScore.color.g,tmBestScore.color.b,tmBestScore.color.a + 0.005f);
+            tmName.color = new Color(tmName.color.r,tmName.color.g,tmName.color.b,tmName.color.a + 0.011f);
+            tmTotalScore.color = new Color(tmTotalScore.color.r,tmTotalScore.color.g,tmTotalScore.color.b,tmTotalScore.color.a + 0.011f);
+            tmBestScore.color = new Color(tmBestScore.color.r,tmBestScore.color.g,tmBestScore.color.b,tmBestScore.color.a + 0.011f);
         }
         else {
             showingStatistics = false;

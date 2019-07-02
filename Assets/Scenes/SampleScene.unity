@@ -878,6 +878,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1037428613}
+        m_MethodName: setHidingStatistics
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &471251312
@@ -2473,6 +2484,8 @@ MonoBehaviour:
   playerLevel: 0
   totalScore: 0
   bestScore: 0
+  hidingStatistics: 0
+  showingStatistics: 0
 --- !u!4 &1037428614
 Transform:
   m_ObjectHideFlags: 0
@@ -3286,6 +3299,17 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1037428613}
+        m_MethodName: setHidingStatistics
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -4676,7 +4700,7 @@ PrefabInstance:
     - target: {fileID: 2075281131425620664, guid: 65a9a3e3bf219c745b8d8a320b4dd26a,
         type: 3}
       propertyPath: health
-      value: 100
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65a9a3e3bf219c745b8d8a320b4dd26a, type: 3}
@@ -4687,6 +4711,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6727580719320865955, guid: 3b048fbca22c6144c80204471f44d2d2,
+        type: 3}
+      propertyPath: restartButton
+      value: 
+      objectReference: {fileID: 1409255390}
+    - target: {fileID: 6727580719320865955, guid: 3b048fbca22c6144c80204471f44d2d2,
+        type: 3}
+      propertyPath: profile
+      value: 
+      objectReference: {fileID: 1037428612}
+    - target: {fileID: 6727580719320865955, guid: 3b048fbca22c6144c80204471f44d2d2,
+        type: 3}
+      propertyPath: statistics
+      value: 
+      objectReference: {fileID: 1661237443}
+    - target: {fileID: 6727580719320865955, guid: 3b048fbca22c6144c80204471f44d2d2,
+        type: 3}
+      propertyPath: menuButton
+      value: 
+      objectReference: {fileID: 1040295366}
+    - target: {fileID: 6727580719320865955, guid: 3b048fbca22c6144c80204471f44d2d2,
+        type: 3}
+      propertyPath: profileScript
+      value: 
+      objectReference: {fileID: 1037428613}
+    - target: {fileID: 6727580719320865955, guid: 3b048fbca22c6144c80204471f44d2d2,
+        type: 3}
+      propertyPath: backButton
+      value: 
+      objectReference: {fileID: 1436064446}
+    - target: {fileID: 6727580719320865955, guid: 3b048fbca22c6144c80204471f44d2d2,
+        type: 3}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 764604775}
+    - target: {fileID: 6727580719320865955, guid: 3b048fbca22c6144c80204471f44d2d2,
+        type: 3}
+      propertyPath: startSpawnTimerCircle
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6727580719320865954, guid: 3b048fbca22c6144c80204471f44d2d2,
         type: 3}
       propertyPath: m_Name
@@ -4746,46 +4810,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6727580719320865955, guid: 3b048fbca22c6144c80204471f44d2d2,
-        type: 3}
-      propertyPath: restartButton
-      value: 
-      objectReference: {fileID: 1409255390}
-    - target: {fileID: 6727580719320865955, guid: 3b048fbca22c6144c80204471f44d2d2,
-        type: 3}
-      propertyPath: profile
-      value: 
-      objectReference: {fileID: 1037428612}
-    - target: {fileID: 6727580719320865955, guid: 3b048fbca22c6144c80204471f44d2d2,
-        type: 3}
-      propertyPath: statistics
-      value: 
-      objectReference: {fileID: 1661237443}
-    - target: {fileID: 6727580719320865955, guid: 3b048fbca22c6144c80204471f44d2d2,
-        type: 3}
-      propertyPath: menuButton
-      value: 
-      objectReference: {fileID: 1040295366}
-    - target: {fileID: 6727580719320865955, guid: 3b048fbca22c6144c80204471f44d2d2,
-        type: 3}
-      propertyPath: profileScript
-      value: 
-      objectReference: {fileID: 1037428613}
-    - target: {fileID: 6727580719320865955, guid: 3b048fbca22c6144c80204471f44d2d2,
-        type: 3}
-      propertyPath: backButton
-      value: 
-      objectReference: {fileID: 1436064446}
-    - target: {fileID: 6727580719320865955, guid: 3b048fbca22c6144c80204471f44d2d2,
-        type: 3}
-      propertyPath: scoreText
-      value: 
-      objectReference: {fileID: 764604775}
-    - target: {fileID: 6727580719320865955, guid: 3b048fbca22c6144c80204471f44d2d2,
-        type: 3}
-      propertyPath: startSpawnTimerCircle
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b048fbca22c6144c80204471f44d2d2, type: 3}
