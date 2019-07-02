@@ -37,11 +37,11 @@ public class EnemyWaveController : MonoBehaviour
 
         position.x = Random.Range(-70, 70);
         if(position.x >= 40 || position.x <= -40) {
-            position.y = Random.Range(-50, 50);
+            position.y = Random.Range(-70, 70);
         }
         else {
-            position.y = Random.Range(-50, 50);
-            if(position.y >= 25 || position.y <= -25) {
+            position.y = Random.Range(-70, 70);
+            if(position.y >= 40 || position.y <= -40) {
                 position.x = Random.Range(-70, 70);
             }
             else {
