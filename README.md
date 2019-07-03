@@ -25,7 +25,7 @@
 
 - [ ] 4. Aesthetics:
   - [x] a. Player taking damage
-  - [ ] b. Enemy lefting colors
+  - [x] b. Enemy lefting colors
   - [x] c. Screen shake when player is taking damage
   - [x] d. Gun shot animation
   - [x] e. Gun shot sound
