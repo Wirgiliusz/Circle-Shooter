@@ -150,4 +150,11 @@ public class GameMaster : MonoBehaviour
         scoreMultiplier = 1.0f;
         gameSpeed = 1.0f;
     }
+
+    public void clearPlayfield() {
+        GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Splash");
+        for(int i=0; i<gameObjects.Length; i++) {
+            Destroy(gameObjects[i]);
+        }
+    }
 }

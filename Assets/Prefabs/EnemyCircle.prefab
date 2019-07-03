@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7771a133a89ee064b8b428d1251858e7, type: 3}
-  m_Color: {r: 0.9882878, g: 1, b: 0, a: 1}
+  m_Color: {r: 0.98823524, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -227,11 +227,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c0efd601135391429122f9c3f3ad2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  comboText: {fileID: 5890145855728852174, guid: 73c5ff42b935c8e4ea323fc27171f8f7,
+  destroyParticleEffect: {fileID: 4757132479511866559, guid: 5a56dc488581abf45a9d61ffe20ef81e,
     type: 3}
   scoreText: {fileID: 2244445206992010843, guid: 7a47eed17b330714e949bf71ed0b864c,
     type: 3}
-  destroyParticleEffect: {fileID: 4757132479511866559, guid: 5a56dc488581abf45a9d61ffe20ef81e,
+  comboText: {fileID: 5890145855728852174, guid: 73c5ff42b935c8e4ea323fc27171f8f7,
+    type: 3}
+  splashEffect: {fileID: 5032927261359861995, guid: 11d61cf78536bd341ac2a143477695ab,
     type: 3}
   health: 1
   startSpeed: 10

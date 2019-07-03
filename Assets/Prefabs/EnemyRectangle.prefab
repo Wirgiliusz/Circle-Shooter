@@ -128,6 +128,8 @@ MonoBehaviour:
     type: 3}
   comboText: {fileID: 5890145855728852174, guid: 73c5ff42b935c8e4ea323fc27171f8f7,
     type: 3}
+  splashEffect: {fileID: 5032927261359861995, guid: 11d61cf78536bd341ac2a143477695ab,
+    type: 3}
   health: 1
   startSpeed: 10
   damage: 1

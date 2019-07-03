@@ -122,11 +122,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dcdd259ce7b41c47ab617fde3a30070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  comboText: {fileID: 5890145855728852174, guid: 73c5ff42b935c8e4ea323fc27171f8f7,
+  destroyParticleEffect: {fileID: 474616603185146588, guid: b1c04cf013a2ae343a36f87eba2d9351,
     type: 3}
   scoreText: {fileID: 2244445206992010843, guid: 7a47eed17b330714e949bf71ed0b864c,
     type: 3}
-  destroyParticleEffect: {fileID: 474616603185146588, guid: b1c04cf013a2ae343a36f87eba2d9351,
+  comboText: {fileID: 5890145855728852174, guid: 73c5ff42b935c8e4ea323fc27171f8f7,
+    type: 3}
+  splashEffect: {fileID: 5032927261359861995, guid: 11d61cf78536bd341ac2a143477695ab,
     type: 3}
   health: 1
   startSpeed: 10

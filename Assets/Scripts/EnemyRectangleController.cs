@@ -10,6 +10,8 @@ public class EnemyRectangleController : MonoBehaviour
     private Transform targetTransform;  // transform of the enemy target
     private Vector2 direction;          // enemy direction vector
 
+    public GameObject splashEffect;
+
     public int health;        // enemy health
     public float startSpeed;     // enemy speed
     private float speed;
@@ -67,6 +69,9 @@ public class EnemyRectangleController : MonoBehaviour
 
             GameObject comboTextMesh = Instantiate(comboText, transform.position, Quaternion.identity);
             comboTextMesh.GetComponent<TextMesh>().color = GetComponent<SpriteRenderer>().color;
+
+            Instantiate(splashEffect, transform.position, Quaternion.identity).GetComponent<SpriteRenderer>().color = new Color(0.7f,0,0,Random.Range(0.5f,0.9f));
+            //splashEffect.GetComponent<SpriteRenderer>().color = new Color(0.7f,0,0,1);
             
             Destroy(gameObject);
         }
