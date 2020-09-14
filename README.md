@@ -20,8 +20,15 @@
   - [x] b. Gameplay speed based on score
   - [x] c. Difficulty selection
   - [ ] d. Camera zoom-out based on score
-  - [ ] e. New weapons (explosion around player)
-  - [x] f. Player profile and statistics
+  - [ ] e. New weapons (nlocks based on lvl?)
+    - [ ] explosion around player
+    - [ ] rapid shooting
+    - [ ] faster bullet speed
+    - [ ] laser
+  - [ ] f. Player profile and statistics
+    - [x] ingame statistics
+    - [ ] save state
+    - [ ] load state
 
 - [ ] 4. Aesthetics:
   - [x] a. Player taking damage
@@ -37,6 +44,8 @@
   - [x] a. Difficulty selection (easy/normal)
   - [ ] b. Graphics settings
   
+- [ ] 6. Port to mobile phones
+
 - [ ] #. Bugs:
   - [ ] a. Double button tap breaks a lot of things
   - [x] b. Hard-mode breaks game (it was because of spacebar interaction with buttons..)
